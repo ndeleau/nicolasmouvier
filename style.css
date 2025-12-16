@@ -174,3 +174,43 @@ h1 {
         text-align: center;
     }
 }
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-family: var(--font-sans);
+    margin-top: 1rem;
+    padding: 10px 0;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+.social-link svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--text-highlight); 
+    transition: fill 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--accent-blood);
+    font-weight: 600;
+}
+
+.social-link:hover svg {
+    fill: var(--accent-blood); 
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        align-items: center;
+    }
+}
