@@ -147,9 +147,11 @@ h1 {
 
 .bio-content p {
     margin-bottom: 1.5rem;
-    font-size: 0.95rem;
+    font-size: 1.15rem;
+    text-align: justify;
     color: #ffffff;
     opacity: 1;
+    line-height: 1.9;
 }
 
 @media (max-width: 768px) {
@@ -164,6 +166,9 @@ h1 {
     
     .bio-content {
         text-align: left !important;
+    }
+    .bio-content p {
+        text-align: left;
     }
     .bio-content h2 {
         text-align: center;
