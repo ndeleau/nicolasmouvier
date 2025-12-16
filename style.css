@@ -1,199 +1,173 @@
-/* --- Variables de couleurs --- */
 :root {
-    --bg-color: #121212;        /* Noir très profond (plus doux que le noir pur) */
-    --card-bg: #1e1e1e;         /* Gris anthracite pour les zones de contenu */
-    --text-color: #e0e0e0;      /* Blanc cassé pour la lisibilité */
-    --accent-red: #8a0303;      /* Rouge sang foncé */
-    --accent-red-hover: #b30404; /* Rouge un peu plus vif au survol */
-    --font-heading: 'Cinzel', serif; /* Police "Cinéma/Classique" */
-    --font-body: 'Lato', sans-serif; /* Police moderne et lisible */
+    --bg-dark: #121212;
+    --text-main: #cccccc;
+    --text-highlight: #ffffff;
+    --accent-blood: #ab0505; 
+    
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+
+    --site-width: 1100px; 
 }
 
-/* --- Reset & Base --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-body);
-    line-height: 1.6;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.8;
+    font-weight: 300;
+    overflow: hidden;
+    height: 100vh;
 }
 
-a { text-decoration: none; color: inherit; transition: 0.3s; }
+a { 
+    text-decoration: none; 
+    color: inherit; 
+    transition: color 0.3s ease, font-weight 0.3s ease; 
+}
 ul { list-style: none; }
 
-/* --- Navigation --- */
-.navbar {
+header {
+    position: absolute;
+    top: 0;
+    left: 0; right: 0; margin: 0 auto;
+    width: 100%;
+    max-width: var(--site-width);
+    padding: 2rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    background-color: rgba(18, 18, 18, 0.95);
-    border-bottom: 1px solid var(--accent-red);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    z-index: 10;
 }
 
+/* MODIFICATION ICI : NOM PLUS GRAND */
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent-red);
+    font-family: var(--font-serif);
+    font-size: 2.5rem;   /* Beaucoup plus grand (avant 1.5rem) */
+    color: var(--text-highlight);
+    letter-spacing: 4px; /* Plus d'espace pour l'élégance */
+    text-transform: uppercase;
+}
+
+nav ul { display: flex; gap: 2rem; }
+
+nav a {
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
     letter-spacing: 2px;
-    text-transform: uppercase;
+    color: var(--text-main); 
+    opacity: 0.8;
+    font-weight: 300;
 }
 
-.nav-links { display: flex; gap: 30px; }
-
-.nav-links a {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+nav a:hover { 
+    font-weight: 600;
+    color: var(--accent-blood);
+    opacity: 1;
 }
 
-.nav-links a:hover, .nav-links a.active {
-    color: var(--accent-red);
+.auteur {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: flex-end; 
+    background-image: linear-gradient(to right, rgba(18,18,18,0.9) 0%, rgba(18,18,18,0.2) 100%), 
+                      url('img/moi.png'); 
+    background-size: cover;
+    background-position: center; 
+    padding-left: max(1.5rem, calc((100% - var(--site-width)) / 2));
+    padding-right: max(1.5rem, calc((100% - var(--site-width)) / 2));
 }
 
-/* --- Boutons --- */
+.auteur-content { 
+    max-width: 600px; 
+    text-align: right; 
+}
+
+h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    color: var(--text-highlight);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    display: block;
+    font-style: italic;
+}
+
 .btn {
     display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--accent-red);
-    color: #fff;
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    border: 1px solid var(--accent-red);
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.btn:hover { background-color: var(--accent-red-hover); }
-
-.btn-outline {
+    padding: 1rem 0; 
+    border: none; 
     background-color: transparent;
-    border: 1px solid var(--text-color);
-    margin-left: 10px;
-}
-
-.btn-outline:hover {
-    border-color: var(--accent-red);
-    color: var(--accent-red);
-}
-
-/* --- Hero Section (Accueil) --- */
-.hero {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: radial-gradient(circle at center, #2a0a0a 0%, #121212 100%);
-    padding: 0 20px;
-}
-
-.hero h1 {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.hero .subtitle {
-    font-size: 1.2rem;
-    color: #aaa;
-    margin-bottom: 30px;
-    font-style: italic;
-}
-
-/* --- Layout Général --- */
-.section-padding { padding: 60px 20px; }
-.container { max-width: 1000px; margin: 0 auto; }
-
-h2 {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--accent-red);
-    margin-bottom: 30px;
-    text-align: center;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-}
-
-/* --- Page Livres --- */
-.book-showcase {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    margin-top: 40px;
-}
-
-.book-card {
-    display: flex;
-    background-color: var(--card-bg);
-    border-left: 4px solid var(--accent-red);
-    padding: 30px;
-    gap: 40px;
-    align-items: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-
-.book-image {
-    flex: 1;
-    min-width: 200px;
-    max-width: 300px;
-}
-
-/* Placeholder pour l'image si vous n'en avez pas encore */
-.placeholder-img {
-    width: 100%;
-    height: 350px;
-    background-color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #555;
-    border: 1px dashed #666;
-}
-
-.book-details { flex: 2; }
-
-.book-details h3 {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    margin-bottom: 5px;
-}
-
-.genre {
-    display: block;
-    color: var(--accent-red);
-    font-style: italic;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-}
-
-/* --- Footer --- */
-footer {
-    text-align: center;
-    padding: 40px;
-    border-top: 1px solid #333;
-    margin-top: 50px;
+    color: var(--text-highlight);
+    font-family: var(--font-sans);
+    text-transform: uppercase;
     font-size: 0.8rem;
-    color: #777;
+    letter-spacing: 2px;
+    font-weight: 300;
+    cursor: pointer;
 }
 
-footer a { color: #aaa; margin: 0 5px; }
-footer a:hover { color: var(--accent-red); }
+.btn:hover {
+    color: var(--accent-blood);
+    font-weight: 700;
+}
 
-/* --- Responsive (Mobile) --- */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .book-card { flex-direction: column; text-align: center; }
-    .book-image { margin: 0 auto; }
-    .nav-links { gap: 15px; }
+    body { overflow: auto; }
+    header { position: relative; flex-direction: column; gap: 1rem; text-align: center; }
+    
+    /* Ajustement mobile pour éviter que le logo ne soit énorme sur téléphone */
+    .logo { font-size: 2rem; }
+    
+    h1 { font-size: 2.5rem; }
+    .auteur { justify-content: center; } 
+    .auteur-content { text-align: center; }
+}
+
+/* --- AJOUTS POUR LA PAGE AUTEUR --- */
+
+/* Style spécifique pour le bloc de texte de la bio */
+.bio-content {
+    /* Force le texte à être justifié (aligné gauche et droite) */
+    text-align: justify !important; 
+    
+    /* Optionnel : pour éviter les gros trous entre les mots */
+    hyphens: auto; 
+}
+
+.bio-content h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--text-highlight);
+    margin-bottom: 2rem;
+    text-align: right; /* Le titre reste aligné à droite pour le style */
+    border-bottom: 1px solid var(--accent-blood); /* Petite ligne rouge sous le titre */
+    padding-bottom: 1rem;
+    display: inline-block; /* Pour que la ligne s'arrête au texte */
+    width: 100%;
+}
+
+.bio-content p {
+    margin-bottom: 1.5rem; /* Espace entre les deux paragraphes */
+    font-size: 0.95rem;    /* Taille de lecture confortable */
+    opacity: 0.9;
+}
+
+/* RESPONSIVE : Sur mobile, on enlève le justifié car c'est illisible sur petit écran */
+@media (max-width: 768px) {
+    .bio-content {
+        text-align: left !important; /* Ou center, selon votre goût */
+    }
+    .bio-content h2 {
+        text-align: center;
+    }
 }
