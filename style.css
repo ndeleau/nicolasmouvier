@@ -48,7 +48,7 @@ header {
     color: var(--text-highlight);
     letter-spacing: 0;
     text-transform: none;
-    font-weight: 400;
+    font-weight: 700; /* Vrai Gras comme le H1 */
     line-height: 1.2;
 }
 
@@ -94,7 +94,7 @@ h1 {
     color: var(--text-highlight);
     line-height: 1.2;
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 700; /* RETOUR AU VRAI GRAS (BOLD) */
 }
 
 .accent {
@@ -142,7 +142,7 @@ h1 {
     padding-bottom: 1rem;
     display: inline-block;
     width: 100%;
-    font-weight: 400;
+    font-weight: 700; /* Gras ici aussi */
 }
 
 .bio-content p {
