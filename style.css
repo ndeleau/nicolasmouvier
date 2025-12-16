@@ -42,12 +42,12 @@ header {
     z-index: 10;
 }
 
-/* MODIFICATION ICI : NOM PLUS GRAND */
+
 .logo {
     font-family: var(--font-serif);
-    font-size: 2.5rem;   /* Beaucoup plus grand (avant 1.5rem) */
+    font-size: 2.5rem;  
     color: var(--text-highlight);
-    letter-spacing: 4px; /* Plus d'espace pour l'élégance */
+    letter-spacing: 4px; 
     text-transform: uppercase;
 }
 
@@ -125,7 +125,7 @@ h1 {
     body { overflow: auto; }
     header { position: relative; flex-direction: column; gap: 1rem; text-align: center; }
     
-    /* Ajustement mobile pour éviter que le logo ne soit énorme sur téléphone */
+    
     .logo { font-size: 2rem; }
     
     h1 { font-size: 2.5rem; }
@@ -133,14 +133,12 @@ h1 {
     .auteur-content { text-align: center; }
 }
 
-/* --- AJOUTS POUR LA PAGE AUTEUR --- */
 
-/* Style spécifique pour le bloc de texte de la bio */
 .bio-content {
-    /* Force le texte à être justifié (aligné gauche et droite) */
+    
     text-align: justify !important; 
     
-    /* Optionnel : pour éviter les gros trous entre les mots */
+   
     hyphens: auto; 
 }
 
@@ -149,23 +147,23 @@ h1 {
     font-size: 2rem;
     color: var(--text-highlight);
     margin-bottom: 2rem;
-    text-align: right; /* Le titre reste aligné à droite pour le style */
-    border-bottom: 1px solid var(--accent-blood); /* Petite ligne rouge sous le titre */
+    text-align: right; 
+    border-bottom: 1px solid var(--accent-blood);
     padding-bottom: 1rem;
-    display: inline-block; /* Pour que la ligne s'arrête au texte */
+    display: inline-block; 
     width: 100%;
 }
 
 .bio-content p {
-    margin-bottom: 1.5rem; /* Espace entre les deux paragraphes */
-    font-size: 0.95rem;    /* Taille de lecture confortable */
+    margin-bottom: 1.5rem; 
+    font-size: 0.95rem;    
     opacity: 0.9;
 }
 
-/* RESPONSIVE : Sur mobile, on enlève le justifié car c'est illisible sur petit écran */
+
 @media (max-width: 768px) {
     .bio-content {
-        text-align: left !important; /* Ou center, selon votre goût */
+        text-align: left !important; 
     }
     .bio-content h2 {
         text-align: center;
